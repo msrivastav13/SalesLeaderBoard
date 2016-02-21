@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="SalesLeaderBoardController">
+
+	<ltng:require styles="/resource/SLDS0121/assets/styles/salesforce-lightning-design-system-ltng.css" />
+
+	<!--ATTRIBUTES DECLARATION -->
+	<aura:attribute name="lstsalesUser" type="SalesLeaderBoardController.SalesLeader[]"/>
+
+
+	<aura:handler name="init" value="{!this}" action="{!c.getData}" />
+
+	<div class="slds">
+		<div class="slds-page-header">
+		     <h3>
+		     	<b>
+		     		<center>SALES LEADERBOARD</center>
+		     	</b>
+		     </h3>
+		</div>
+	  	<br/>
+	  	<aura:iteration items="{!v.lstsalesUser}" var="usr">
+	  		<c:SalesLeaderBoardCard salesUser="{!usr}"/>
+	  	</aura:iteration>
+	</div>
+
+</aura:component>

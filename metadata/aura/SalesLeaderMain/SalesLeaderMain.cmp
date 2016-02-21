@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable">
+    <c:SalesLeaderBoard />
+  <c:SalesLeaderDetail />
+</aura:component>
